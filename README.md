@@ -25,7 +25,19 @@ This project demonstrates basic security monitoring and log analysis techniques 
 - `/queries` – Search queries used to detect events  
 - `/screenshots` – Evidence of analysis and findings  
 
+## Evidence
+
+### Failed Login Attempts (Brute Force Simulation)
+
+The following output shows multiple failed authentication attempts targeting different usernames from the same source IP, indicating potential brute-force activity.
+
 ![Failed Login Analysis](screenshots/failed-login-analysis.png)
+
+### Privilege Escalation Activity
+
+The following log entries show the user executing commands with elevated privileges using sudo, indicating privilege escalation.
+
+![Sudo Activity](screenshots/sudo-activity.png)
 
 ## Outcome
 This lab demonstrates foundational skills in security monitoring, log analysis, and threat detection, which are essential for SOC analyst and entry-level cybersecurity roles.
