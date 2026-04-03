@@ -10,7 +10,7 @@ This project demonstrates basic security monitoring and log analysis techniques 
 - Understand indicators of compromise (IOCs)
 
 ## Tools Used
-- Splunk (or log analysis tools)
+- Splunk 
 - Linux (Ubuntu / Kali)
 - Sample system and network logs
 
@@ -24,6 +24,10 @@ This project demonstrates basic security monitoring and log analysis techniques 
 - `/logs` – Sample log files used for analysis  
 - `/queries` – Search queries used to detect events  
 - `/screenshots` – Evidence of analysis and findings  
+
+## SIEM Setup
+
+Splunk Enterprise was installed locally and used to ingest authentication logs for analysis. The logs were uploaded via the Splunk "Add Data" interface and indexed for querying.
 
 ## Evidence
 
