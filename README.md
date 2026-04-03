@@ -25,7 +25,7 @@ This project demonstrates basic security monitoring and log analysis techniques 
 - `/queries` – Search queries used to detect events  
 - `/screenshots` – Evidence of analysis and findings  
 
-![Failed Login Analysis](screenshots/grep -n failed password auth log.png.png)
+![Failed Login Analysis](screenshots/failed-login-analysis.png)
 
 ## Outcome
 This lab demonstrates foundational skills in security monitoring, log analysis, and threat detection, which are essential for SOC analyst and entry-level cybersecurity roles.
