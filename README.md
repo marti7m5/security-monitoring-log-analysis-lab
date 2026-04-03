@@ -4,15 +4,18 @@
 This project demonstrates basic security monitoring and log analysis techniques using a simulated environment. The goal is to identify suspicious activity and understand how security events appear in system and network logs.
 
 ## Objectives
-- Analyze system and network logs
+- Analyze Linux authentication logs
 - Identify failed login attempts and suspicious behavior
-- Apply SIEM concepts such as event correlation and detection
-- Understand indicators of compromise (IOCs)
+- Perform SIEM-based event analysis in Splunk
+- Correlate events by source IP, targeted username, and command activity
+- Identify indicators of compromise (IOCs)
 
 ## Tools Used
-- Splunk 
-- Linux (Ubuntu / Kali)
-- Sample system and network logs
+- Splunk Enterprise
+- Ubuntu WSL
+- Linux authentication logs (`/var/log/auth.log`)
+- grep
+- Regular expressions (regex)
 
 ## Key Activities
 - Ingested and reviewed log data
@@ -74,6 +77,13 @@ sudo "COMMAND="
 ```
 
 ![Splunk Sudo Commands](screenshots/splunk-sudo-commands.png)
+
+## Key Findings
+
+- Multiple failed login attempts were identified from two source IP addresses
+- Targeted usernames included admin, root, and test
+- Elevated commands executed with sudo included apt update, apt upgrade, and package installation
+- Splunk field extraction with regex enabled correlation by source IP, username, and command
 
 ## Outcome
 This lab demonstrates foundational skills in security monitoring, log analysis, and threat detection, which are essential for SOC analyst and entry-level cybersecurity roles.
