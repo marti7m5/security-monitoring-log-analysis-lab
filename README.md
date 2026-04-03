@@ -1,7 +1,7 @@
 # Security Monitoring & Log Analysis Lab
 
 ## Overview
-This project demonstrates basic security monitoring and log analysis techniques using a simulated environment. The goal is to identify suspicious activity and understand how security events appear in system and network logs.
+This project demonstrates security monitoring and log analysis using Linux authentication logs and Splunk Enterprise.
 
 ## Objectives
 - Analyze Linux authentication logs
@@ -87,3 +87,10 @@ sudo "COMMAND="
 
 ## Outcome
 This lab demonstrates foundational skills in security monitoring, log analysis, and threat detection, which are essential for SOC analyst and entry-level cybersecurity roles.
+
+## What I Learned
+
+- How to analyze authentication logs for security events
+- How to use Splunk for log ingestion and SIEM-based analysis
+- How to extract fields using regex for deeper investigation
+- How to correlate events across multiple dimensions (IP, user, command)
