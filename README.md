@@ -29,19 +29,51 @@ This project demonstrates basic security monitoring and log analysis techniques 
 
 Splunk Enterprise was installed locally and used to ingest authentication logs for analysis. The logs were uploaded via the Splunk "Add Data" interface and indexed for querying.
 
-## Evidence
+## SIEM Analysis (Splunk)
 
-### Failed Login Attempts (Brute Force Simulation)
+Authentication logs were ingested into Splunk Enterprise to simulate real-world Security Operations Center (SOC) monitoring and detection workflows. Analysis focused on identifying failed login attempts, correlating attack patterns, and detecting privilege escalation activity.
 
-The following output shows multiple failed authentication attempts targeting different usernames from the same source IP, indicating potential brute-force activity.
+### Failed Login Events (Initial Detection)
+The following search identifies failed authentication attempts within the dataset.
 
-![Failed Login Analysis](screenshots/failed-login-analysis.png)
+```spl
+"Failed password"
+```
 
-### Privilege Escalation Activity
+![Splunk Failed Logins](screenshots/splunk-failed-logins.png)
 
-The following log entries show the user executing commands with elevated privileges using sudo, indicating privilege escalation.
+### Failed Login Summary by Source IP
+This query extracts source IP addresses and aggregates failed login attempts to identify potential attack sources.
 
-![Sudo Activity](screenshots/sudo-activity.png)
+```spl
+"Failed password"
+| rex "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip
+```
+
+![Splunk Failed by IP](screenshots/splunk-failed-by-ip.png)
+
+### Failed Login Summary by Targeted Username
+This query extracts targeted usernames and aggregates failed login attempts to identify which accounts are being targeted.
+
+```spl
+"Failed password"
+| rex "invalid user (?<target_user>\w+)"
+| stats count by target_user
+```
+
+![Splunk Failed by User](screenshots/splunk-failed-by-user.png)
+
+### Sudo Command Summary (Privilege Escalation)
+This query extracts and summarizes commands executed with elevated privileges, providing visibility into administrative activity.
+
+```spl
+sudo "COMMAND="
+| rex "COMMAND=(?<command>.+)$"
+| stats count by command
+```
+
+![Splunk Sudo Commands](screenshots/splunk-sudo-commands.png)
 
 ## Outcome
 This lab demonstrates foundational skills in security monitoring, log analysis, and threat detection, which are essential for SOC analyst and entry-level cybersecurity roles.
