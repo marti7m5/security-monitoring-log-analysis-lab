@@ -1,0 +1,60 @@
+2026-04-02T18:42:26.818872-04:00 michael systemd-logind[199]: New seat seat0.
+2026-04-02T18:42:54.486944-04:00 michael groupadd[443]: group added to /etc/group: name=marti7m5, GID=1000
+2026-04-02T18:42:54.506407-04:00 michael groupadd[443]: group added to /etc/gshadow: name=marti7m5
+2026-04-02T18:42:54.514761-04:00 michael groupadd[443]: new group: name=marti7m5, GID=1000
+2026-04-02T18:42:54.618339-04:00 michael useradd[450]: new user: name=marti7m5, UID=1000, GID=1000, home=/home/marti7m5, shell=/bin/bash, from=/dev/pts/0
+2026-04-02T18:43:06.215099-04:00 michael passwd[463]: pam_unix(passwd:chauthtok): password changed for marti7m5
+2026-04-02T18:43:06.253198-04:00 michael chfn[469]: changed user 'marti7m5' information
+2026-04-02T18:43:06.314582-04:00 michael gpasswd[477]: members of group users set by root to marti7m5
+2026-04-02T18:43:06.360816-04:00 michael usermod[483]: add 'marti7m5' to group 'adm'
+2026-04-02T18:43:06.361032-04:00 michael usermod[483]: add 'marti7m5' to group 'cdrom'
+2026-04-02T18:43:06.361110-04:00 michael usermod[483]: add 'marti7m5' to group 'sudo'
+2026-04-02T18:43:06.361263-04:00 michael usermod[483]: add 'marti7m5' to group 'dip'
+2026-04-02T18:43:06.361326-04:00 michael usermod[483]: add 'marti7m5' to group 'plugdev'
+2026-04-02T18:43:06.361467-04:00 michael usermod[483]: add 'marti7m5' to shadow group 'adm'
+2026-04-02T18:43:06.361566-04:00 michael usermod[483]: add 'marti7m5' to shadow group 'cdrom'
+2026-04-02T18:43:06.361724-04:00 michael usermod[483]: add 'marti7m5' to shadow group 'sudo'
+2026-04-02T18:43:06.361813-04:00 michael usermod[483]: add 'marti7m5' to shadow group 'dip'
+2026-04-02T18:43:06.361957-04:00 michael usermod[483]: add 'marti7m5' to shadow group 'plugdev'
+2026-04-02T18:43:06.437954-04:00 michael login[498]: PAM unable to dlopen(pam_lastlog.so): /usr/lib/security/pam_lastlog.so: cannot open shared object file: No such file or directory
+2026-04-02T18:43:06.438266-04:00 michael login[498]: PAM adding faulty module: pam_lastlog.so
+2026-04-02T18:43:07.205865-04:00 michael login[498]: pam_unix(login:session): session opened for user marti7m5(uid=1000) by marti7m5(uid=0)
+2026-04-02T18:43:07.300037-04:00 michael systemd-logind[199]: New session 1 of user marti7m5.
+2026-04-02T18:43:07.332387-04:00 michael (systemd): pam_unix(systemd-user:session): session opened for user marti7m5(uid=1000) by marti7m5(uid=0)
+2026-04-02T18:44:21.227721-04:00 michael sudo: marti7m5 : TTY=pts/0 ; PWD=/home/marti7m5 ; USER=root ; COMMAND=/usr/bin/apt update
+2026-04-02T18:44:21.229517-04:00 michael sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2026-04-02T18:44:58.502558-04:00 michael polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2026-04-02T18:44:58.503398-04:00 michael polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2026-04-02T18:44:58.509771-04:00 michael polkitd[960]: Finished loading, compiling and executing 4 rules
+2026-04-02T18:44:58.512675-04:00 michael polkitd[960]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2026-04-02T18:45:18.691018-04:00 michael sudo: pam_unix(sudo:session): session closed for user root
+2026-04-02T18:45:18.708381-04:00 michael sudo: marti7m5 : TTY=pts/0 ; PWD=/home/marti7m5 ; USER=root ; COMMAND=/usr/bin/apt upgrade -y
+2026-04-02T18:45:18.710719-04:00 michael sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2026-04-02T18:46:49.147864-04:00 michael polkitd[960]: Reloading rules
+2026-04-02T18:46:49.148393-04:00 michael polkitd[960]: Collecting garbage unconditionally...
+2026-04-02T18:46:49.148862-04:00 michael polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2026-04-02T18:46:49.149174-04:00 michael polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2026-04-02T18:46:49.151738-04:00 michael polkitd[960]: Finished loading, compiling and executing 4 rules
+2026-04-02T18:46:49.152158-04:00 michael polkitd[960]: Reloading rules
+2026-04-02T18:46:49.152563-04:00 michael polkitd[960]: Collecting garbage unconditionally...
+2026-04-02T18:46:49.152896-04:00 michael polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2026-04-02T18:46:49.153187-04:00 michael polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2026-04-02T18:46:49.156718-04:00 michael polkitd[960]: Finished loading, compiling and executing 4 rules
+2026-04-02T18:47:57.887322-04:00 michael sudo: pam_unix(sudo:session): session closed for user root
+2026-04-02T18:48:28.632128-04:00 michael sudo: marti7m5 : TTY=pts/0 ; PWD=/home/marti7m5 ; USER=root ; COMMAND=/usr/bin/apt install git openssh-client curl wget unzip -y
+2026-04-02T18:48:28.634602-04:00 michael sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2026-04-02T18:48:34.815921-04:00 michael sudo: pam_unix(sudo:session): session closed for user root
+2026-04-02T19:17:03.783969-04:00 michael CRON[4230]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-04-02T19:17:03.789606-04:00 michael CRON[4230]: pam_unix(cron:session): session closed for user root
+2026-04-02T19:17:50.512212-04:00 michael systemd-logind[199]: The system will power off now!
+2026-04-02T19:17:50.580958-04:00 michael systemd-logind[199]: System is powering down.
+2026-04-02T19:18:41.967164-04:00 michael systemd-logind[171]: New seat seat0.
+2026-04-02T19:18:44.762197-04:00 michael login[296]: PAM unable to dlopen(pam_lastlog.so): /usr/lib/security/pam_lastlog.so: cannot open shared object file: No such file or directory
+2026-04-02T19:18:44.762397-04:00 michael login[296]: PAM adding faulty module: pam_lastlog.so
+2026-04-02T19:18:45.323153-04:00 michael login[296]: pam_unix(login:session): session opened for user marti7m5(uid=1000) by marti7m5(uid=0)
+2026-04-02T19:18:45.333653-04:00 michael systemd-logind[171]: New session 4 of user marti7m5.
+2026-04-02T19:18:45.410331-04:00 michael (systemd): pam_unix(systemd-user:session): session opened for user marti7m5(uid=1000) by marti7m5(uid=0)
+2026-04-02T19:25:12.123456-04:00 michael sshd[2222]: Failed password for invalid user admin from 192.168.1.100 port 54321 ssh2
+2026-04-02T19:25:15.654321-04:00 michael sshd[2222]: Failed password for invalid user root from 192.168.1.100 port 54322 ssh2
+2026-04-02T19:25:18.987654-04:00 michael sshd[2222]: Failed password for invalid user test from 192.168.1.100 port 54323 ssh2
+2026-04-02T19:25:21.456789-04:00 michael sshd[2222]: Failed password for invalid user admin from 192.168.1.101 port 53211 ssh2
