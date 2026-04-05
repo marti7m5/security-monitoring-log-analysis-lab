@@ -1,5 +1,13 @@
 # Security Monitoring & Log Analysis Lab
 
+## 🚨 Attack Scenario
+
+This lab simulates a brute-force authentication attack against a Linux system, followed by successful access and privilege escalation using sudo.
+
+An attacker performs repeated failed login attempts targeting multiple usernames before successfully authenticating and executing elevated commands.
+
+The objective is to detect and analyze this multi-stage attack using Splunk SIEM.
+
 ## Overview
 This project demonstrates security monitoring and log analysis using Linux authentication logs and Splunk Enterprise.
 
@@ -19,7 +27,7 @@ This project demonstrates security monitoring and log analysis using Linux authe
 
 ## Key Activities
 - Ingested and reviewed log data
-- Created queries to identify failed login attempts and abnormal activity
+- Developed custom Splunk queries to detect brute-force authentication patterns and privilege escalation activity
 - Correlated events across logs to detect suspicious behavior
 - Investigated potential security incidents based on log evidence
 
@@ -27,6 +35,16 @@ This project demonstrates security monitoring and log analysis using Linux authe
 - `/logs` – Sample log files used for analysis  
 - `/queries` – Search queries used to detect events  
 - `/screenshots` – Evidence of analysis and findings  
+
+## 🔍 Detection Approach
+
+The following detection strategy was used to identify malicious activity:
+
+- Detect repeated failed login attempts indicating brute-force behavior
+- Identify successful authentication events following failed attempts
+- Correlate activity by source IP and targeted usernames
+- Detect privilege escalation through sudo command execution
+- Reconstruct attacker behavior across multiple log events
 
 ## SIEM Setup
 
@@ -78,12 +96,13 @@ sudo "COMMAND="
 
 ![Splunk Sudo Commands](screenshots/splunk-sudo-commands.png)
 
-## Key Findings
+## 🔍 Key Findings
 
-- Multiple failed login attempts were identified from two source IP addresses
-- Targeted usernames included admin, root, and test
-- Elevated commands executed with sudo included apt update, apt upgrade, and package installation
-- Splunk field extraction with regex enabled correlation by source IP, username, and command
+- Detected brute-force attack activity originating from multiple source IP addresses  
+- Identified targeted usernames including admin, root, and test accounts  
+- Observed successful authentication following repeated failed login attempts  
+- Detected privilege escalation through sudo command execution  
+- Correlated multi-stage attack behavior using source IP, username, and command data 
 
 ## Outcome
 This lab demonstrates foundational skills in security monitoring, log analysis, and threat detection, which are essential for SOC analyst and entry-level cybersecurity roles.
@@ -94,3 +113,9 @@ This lab demonstrates foundational skills in security monitoring, log analysis, 
 - How to use Splunk for log ingestion and SIEM-based analysis
 - How to extract fields using regex for deeper investigation
 - How to correlate events across multiple dimensions (IP, user, command)
+
+## Detection Use Cases
+
+- Brute-force detection based on failed login thresholds  
+- Suspicious authentication behavior from single source IPs  
+- Privilege escalation detection via sudo command monitoring  
